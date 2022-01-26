@@ -4,7 +4,7 @@ import TodoButton from "./UI/button/TodoButton";
 import TodoInput from "./UI/input/TodoInput";
 
 
-const TaskForm = ({ create, todo, sortTodo }) => {
+const TaskForm = ({ create, todo, sortTodo, filter, setFilter }) => {
    const [task, setTask] = useState({ title: '', text: '' })
 
 
@@ -25,7 +25,10 @@ const TaskForm = ({ create, todo, sortTodo }) => {
          onChange={e => { setTask({ ...task, text: e.target.value }) }} />
       <TodoButton onClick={addTask}>Add task</TodoButton>
       <hr style={{ margin: '20px' }} />
-      <TodoFilter sortTodo={sortTodo} />
+      <TodoFilter
+         sortTodo={sortTodo}
+         filter={filter}
+         setFilter={setFilter} />
    </div>
 }
 
