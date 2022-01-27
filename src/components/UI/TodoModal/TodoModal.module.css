@@ -1,0 +1,23 @@
+.todoModal {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   display: none;
+   background: #aaa;
+   opacity: 0.5;
+}
+
+.todoModalContent {
+   padding: 25px;
+   background: #fff;
+   border-radius: 16px;
+   min-width: 300px;
+}
+
+.todoModal.active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

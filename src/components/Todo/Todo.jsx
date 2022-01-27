@@ -2,6 +2,9 @@ import React, { useMemo, useState } from "react";
 import t from './todo.module.css'
 import TaskForm from "../TaskForm";
 import TaskList from "../Task/TaskList";
+import TodoModal from "../UI/TodoModal/TodoModal";
+import TodoFilter from "../TodoFilter";
+import TodoButton from "../UI/button/TodoButton";
 
 const Todo = () => {
 
@@ -12,6 +15,8 @@ const Todo = () => {
    ])
 
    const [filter, setFilter] = useState({ sort: '', query: '' })
+
+   const [modal, setModal] = useState(false)
 
    const sortedListTask = useMemo(() => {
       if (filter.sort) {
@@ -27,6 +32,7 @@ const Todo = () => {
 
    const createTask = (newTask) => {
       setTodo([...todo, newTask])
+      setModal(false)
    }
 
    const removeTask = (task) => {
@@ -34,18 +40,24 @@ const Todo = () => {
    }
 
    return <div className={t.todowrapper}>
-
-      <TaskForm create={createTask}
-         todo={todo}
-         removeTask={removeTask}
+      <TodoButton onClick={() => setModal(true)}>Add user</TodoButton>
+      <TodoModal visible={modal} setVisible={setModal}>
+         <TaskForm create={createTask}
+            todo={todo}
+            removeTask={removeTask}
+            filter={filter}
+            setFilter={setFilter}
+         />
+      </TodoModal>
+      <TodoFilter
          filter={filter}
-         setFilter={setFilter}
-      />
+         setFilter={setFilter} />
       <TaskList
          removeTask={removeTask}
          todo={sortedAndSearchedListTask}
       />
+
    </div>
 }
 
-export default Todo;
+export default Todo; 

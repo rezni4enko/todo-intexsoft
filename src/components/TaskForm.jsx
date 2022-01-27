@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import TodoFilter from "./TodoFilter";
 import TodoButton from "./UI/button/TodoButton";
 import TodoInput from "./UI/input/TodoInput";
 
 
-const TaskForm = ({ create, todo, sortTodo, filter, setFilter }) => {
+const TaskForm = ({ create }) => {
    const [task, setTask] = useState({ title: '', text: '' })
 
 
@@ -24,11 +23,6 @@ const TaskForm = ({ create, todo, sortTodo, filter, setFilter }) => {
       <TodoInput type="text" placeholder="text" value={task.text}
          onChange={e => { setTask({ ...task, text: e.target.value }) }} />
       <TodoButton onClick={addTask}>Add task</TodoButton>
-      <hr style={{ margin: '20px' }} />
-      <TodoFilter
-         sortTodo={sortTodo}
-         filter={filter}
-         setFilter={setFilter} />
    </div>
 }
 
