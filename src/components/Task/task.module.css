@@ -8,9 +8,13 @@
    justify-content: space-between;
    align-items: center;
    padding: 10px;
-   margin: 10px;
+   margin: 10px auto;
 }
 .title {
    font-weight: 700;
    font-size: 20px;
+}
+.taskList {
+   text-align: center;
+   margin: auto;
 }

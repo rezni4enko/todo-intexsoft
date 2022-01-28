@@ -11,7 +11,7 @@ const Task = (props) => {
    return <div className={t.wrapper}>
       <div>
          <div className={t.title}>{props.task.title}</div>
-         <div>{props.task.text}</div>
+         <div>{props.task.body}</div>
          <div>{props.id}</div>
       </div>
       <div>

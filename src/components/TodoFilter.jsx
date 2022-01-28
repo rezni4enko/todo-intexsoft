@@ -11,12 +11,12 @@ const TodoFilter = ({ filter, setFilter }) => {
          value={filter.query}
          onChange={e => setFilter({ ...filter, query: e.target.value })} />
       <TodoSelect
-         defaultValue='filtr'
+         defaultValue='filter'
          value={filter.sort}
          onChange={item => setFilter({ ...filter, sort: item })}
          option={[
             { value: 'title', name: 'по названию' },
-            { value: 'text', name: 'по содержанию' }]} />
+            { value: 'body', name: 'по содержанию' }]} />
    </div>
 }
 

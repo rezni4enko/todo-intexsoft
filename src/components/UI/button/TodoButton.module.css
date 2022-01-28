@@ -2,6 +2,9 @@
    width: 100px;
    height: 30px;
    border: 2px solid rgb(35, 117, 10);
-   background: rgb(113, 233, 77);
+   background: rgb(198, 247, 176);
    border-radius: 5px;
+}
+.button:hover {
+   background: rgb(154, 219, 88);
 }

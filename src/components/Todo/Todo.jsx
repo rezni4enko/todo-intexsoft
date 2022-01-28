@@ -1,34 +1,32 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import t from './todo.module.css'
 import TaskForm from "../TaskForm";
 import TaskList from "../Task/TaskList";
 import TodoModal from "../UI/TodoModal/TodoModal";
 import TodoFilter from "../TodoFilter";
 import TodoButton from "../UI/button/TodoButton";
+import { useTask } from "../../hooks/useTask";
+import { fetchPosts } from "../../api/todoApi";
+
 
 const Todo = () => {
 
    const [todo, setTodo] = useState([
-      { id: 1, title: 'first', text: 'bbbb' },
-      { id: 2, title: 'second', text: 'aaa' },
-      { id: 3, title: 'third', text: 'ccc' },
+      // { id: 1, title: 'first', body: 'bbbb' },
+      // { id: 2, title: 'second', body: 'aaa' },
+      // { id: 3, title: 'third', body: 'ccc' },
    ])
+
+   useEffect(() => { addPosts() }, [])
 
    const [filter, setFilter] = useState({ sort: '', query: '' })
 
    const [modal, setModal] = useState(false)
+   const sortedAndSearchedListTask = useTask(filter.query, todo, filter.sort)
 
-   const sortedListTask = useMemo(() => {
-      if (filter.sort) {
-         return [...todo].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]))
-      }
-      return todo
-   }, [filter.sort, todo])
-
-   const sortedAndSearchedListTask = useMemo(() => {
-      return sortedListTask.filter(value => value.title.toLocaleLowerCase().includes(filter.query.toLocaleLowerCase()) ||
-         value.text.includes(filter.query.toLocaleLowerCase()))
-   }, [filter.query, sortedListTask])
+   const addPosts = () => {
+      fetchPosts().then(data => setTodo(data))
+   }
 
    const createTask = (newTask) => {
       setTodo([...todo, newTask])
