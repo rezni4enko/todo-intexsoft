@@ -1,0 +1,19 @@
+.formWrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   margin-top: 100px;
+}
+.formItem {
+   margin-top: 10px;
+   height: 30px;
+   width: 250px;
+}
+
+.formSubmit {
+   margin-top: 10px;
+   height: 30px;
+   width: 250px;
+}

@@ -8,12 +8,13 @@ const TodoModal = ({ children, visible, setVisible }) => {
       rootClasses.push(m.active)
    }
 
-   return <div className={rootClasses.join(' ')} onClick={() => { setVisible(false) }}>
-      <div className={m.todoModalContent} onClick={e => { e.stopPropagation() }}>
-         {children}
+   return (
+      <div className={rootClasses.join(' ')} onClick={() => { setVisible(false) }}>
+         <div className={m.todoModalContent} onClick={e => { e.stopPropagation() }}>
+            {children}
+         </div>
       </div>
-
-   </div>
+   )
 }
 
 export default TodoModal

@@ -1,10 +1,14 @@
 .button {
    width: 100px;
    height: 30px;
-   border: 2px solid rgb(35, 117, 10);
-   background: rgb(198, 247, 176);
-   border-radius: 5px;
+   border: 2px solid rgb(28, 29, 28);
+   background: rgb(92, 92, 87);
+   border-radius: 8px;
+   color: rgba(243, 167, 96, 0.897);
 }
 .button:hover {
-   background: rgb(154, 219, 88);
+   background: rgb(55, 56, 53);
+}
+.button:active {
+   background: rgb(29, 29, 28);
 }

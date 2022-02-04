@@ -1,0 +1,9 @@
+.navbar {
+   background: rgb(203, 207, 203);
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+}
+.navbar-item {
+   margin: 15px;
+}

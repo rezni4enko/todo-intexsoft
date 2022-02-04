@@ -1,20 +1,17 @@
 import React from "react"
-import { TransitionGroup } from "react-transition-group";
 import Task from "./Task";
 import t from './task.module.css'
-
 
 const TaskList = ({ todo, removeTask }) => {
 
    return <div className={t.taskList}> {todo.length
       ?
-      todo.map((task, index) =>
+      todo.map((task) =>
          <Task
             task={task}
-            id={index + 1}
+            id={task.id}
             removeTask={removeTask}
             key={task.id} />)
-
       : <h1>Tasks not found</h1>
    }</div>
 }

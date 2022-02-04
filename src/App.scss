@@ -1,0 +1,39 @@
+.wrapper-pages {
+   margin-top: 15px;
+   max-width: 800px;
+   margin: 0 auto;
+   background: rgb(250, 248, 236);
+}
+.item-pages {
+   border: 1px solid #222;
+   margin: 3px;
+   padding: 3px;
+}
+.item-active {
+   border: 2px solid #222;
+   background: rgb(168, 233, 173);
+   font-weight: 700;
+}
+.task-form {
+   display: flex;
+   flex-direction: column;
+   height: 120px;
+   align-items: center;
+   margin: 5px;
+   justify-content: space-around;
+}
+.task-form-input {
+   width: 100%;
+   margin: 5px;
+}
+.task-form-button {
+}
+.search-input {
+   width: 100px;
+}
+.wrapper-filter {
+   width: 200px;
+}
+.todo-filter {
+   text-align: center;
+}

@@ -1,7 +1,7 @@
 .todoModal {
    position: fixed;
    top: 0;
-   bottom: 0;
+   bottom: 250px;
    right: 0;
    left: 0;
    display: none;
